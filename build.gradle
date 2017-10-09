@@ -1,0 +1,24 @@
+//group 'com.jpm.trade'
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+mainClassName = "com.jpm.trade.Main"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+jar {
+    baseName = "DailyTradingProcess"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+run {
+    args += ['java -cp DailyTradingProcess.jar com.jpm.trade.Main C:\\projectsIntellij\\trade-input.txt']
+}
