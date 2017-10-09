@@ -17,9 +17,6 @@ public class Main {
     public static void main(String[] args) {
 
         fileName = args[0];
-        System.out.println(fileName);
-        //tradingProcess.dailyTradingprocess(System.getProperty("path"));
-
         if(!fileName.isEmpty())
             tradingProcess.dailyTradingprocess(fileName);
         exit(-1);
