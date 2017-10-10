@@ -21,12 +21,15 @@ public class ReportGenerator {
 
     public ResultSet processByteBuffer(MappedByteBuffer mappedByteBuffer) {
         String content;
-        ResultSet resultSet = null;
+        ResultSet resultSet = new ResultSet();
         String[] clients = null;
         if (mappedByteBuffer != null) {
             content = StandardCharsets.UTF_8.decode(mappedByteBuffer).toString();
             if (content.contains("\n")) {
                 clients = content.split("\n");
+                if(!clients[0].contains("Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit")){
+                    resultSet.setFileFormat("Please follow File Format");
+                    return resultSet;}
                 resultSet = populateClients(clients);
             }
         }

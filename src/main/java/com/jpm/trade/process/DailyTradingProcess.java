@@ -12,11 +12,13 @@ public class DailyTradingProcess {
 
     private static FileReader fileReader = new FileReader();
     private static ReportGenerator reportGenerator = new ReportGenerator();
-    private static ResultSet resultSet;
+    private static ResultSet resultSet = new ResultSet();
 
     public static ResultSet dailyTradingprocess(String fileName) {
         MappedByteBuffer mappedByteBuffer =fileReader.processTradingFile(fileName);
         resultSet = reportGenerator.processByteBuffer(mappedByteBuffer);
+        if (!resultSet.getFileFormat().isEmpty())
+            return resultSet;
         System.out.println( "\n|------ Incoming Aggregate Amount On Each SettlementDate------------|\n");
         System.out.println(resultSet.getIncomingAggregateAmount());
 
