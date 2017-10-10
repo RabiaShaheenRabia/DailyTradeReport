@@ -1,7 +1,7 @@
 
-DailyTradeReport - Gradle Application for report generation on settlement basis for buying and selling trades
+DailyTradeReport - Gradle Application for report generation on settlementDate basis for buying and selling trades
 Assigning - Ranking on both selling and buying products
-Condition - Each trade name Must be unique
+Constraint - Each trade name Must be unique/settlementDate
 Application built and tested on Windows O/S
 
  Amount in USD settled incoming everyday
