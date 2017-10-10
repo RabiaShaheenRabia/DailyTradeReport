@@ -29,6 +29,7 @@ public class ReportGenerator {
                 clients = content.split("\n");
                 if(!clients[0].contains("Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit")){
                     resultSet.setFileFormat("Please follow File Format");
+                    System.out.println("Please follow File Format");
                     return resultSet;}
                 resultSet = populateClients(clients);
             }
