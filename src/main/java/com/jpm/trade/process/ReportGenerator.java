@@ -27,9 +27,9 @@ public class ReportGenerator {
             content = StandardCharsets.UTF_8.decode(mappedByteBuffer).toString();
             if (content.contains("\n")) {
                 clients = content.split("\n");
-                if(!clients[0].contains("Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit")){
+                if(!clients[0].trim().equals("Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit")){
                     resultSet.setFileFormat("Please follow File Format");
-                    System.out.println("Please follow File Format");
+                    System.out.println("\n Please follow File Format. File must start with "+"Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit");
                     return resultSet;}
                 resultSet = populateClients(clients);
             }
