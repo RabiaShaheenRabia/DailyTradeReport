@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         DailyTradingProcessTest.class, //test case 1
-        //ReportGeneratorTest.class     //test case 2
+        MainTest .class   //test case 2
 })
 public class TestSuite {
 }
