@@ -1,5 +1,6 @@
 package com.jpm.trade;
 
+import com.jpm.trade.exception.DailyTradeReportExceptionTest;
 import com.jpm.trade.process.DailyTradingProcessTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -10,7 +11,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         DailyTradingProcessTest.class, //test case 1
-        MainTest .class   //test case 2
+        MainTest .class,   //test case 2
+        DailyTradeReportExceptionTest.class
 })
 public class TestSuite {
 }
