@@ -55,3 +55,5 @@ Main is main class. initiates all process.
 
 To execute test cases, Please write following command
 gradlew test --tests com.jpm.trade.TestSuite
+
+Once project is builtsuccessfullt, you can find Test Results in build/test-results
