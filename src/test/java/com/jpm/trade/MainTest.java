@@ -29,7 +29,7 @@ public class MainTest{
 
     @Test
     public void testMainWrongFileFormat() {
-        System.out.println("main");
+
         String[] args ={"",""};
         String fileName = "test-trade-input1.txt";
         ClassLoader classLoader = getClass().getClassLoader();
