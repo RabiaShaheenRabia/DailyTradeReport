@@ -52,3 +52,6 @@ SettlementDate Entity Currency TradeAmount Rank
 
 FileGenerator - Creates i/p file.
 Main is main class. initiates all process.
+
+To execute test cases, Please write following command
+gradlew test --tests com.jpm.trade.TestSuite
