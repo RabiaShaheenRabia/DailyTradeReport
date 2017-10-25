@@ -4,6 +4,8 @@ import com.jpm.trade.process.DailyTradingProcess;
 import com.jpm.trade.process.IDailyTradingProcess;
 import com.jpm.trade.result.ResultSet;
 
+import java.io.File;
+
 import static java.lang.System.exit;
 
 
@@ -19,7 +21,8 @@ public class Main {
 
     public static void main(String[] args) {
         fileName = args[0];
-        if(!fileName.isEmpty())
+        File f = new File(fileName);
+        if(!fileName.isEmpty() && f.exists() && !f.isDirectory())
         { r=tradingProcess.dailyTradingprocess(fileName);
             if(!r.getFileFormat().isEmpty())
                 exit(-1);
