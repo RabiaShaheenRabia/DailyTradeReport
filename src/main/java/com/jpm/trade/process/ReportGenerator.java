@@ -17,7 +17,7 @@ import static java.util.stream.Collectors.*;
 /**
  * Created by Rabia on 08/10/2017.
  */
-public class ReportGenerator {
+public class ReportGenerator implements IReportGenerator{
 
     public ResultSet processByteBuffer(MappedByteBuffer mappedByteBuffer) {
         String content;
@@ -39,7 +39,6 @@ public class ReportGenerator {
 
     public ResultSet  populateClients (String[] clients){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
-        //HashMap<String, Client> set = new HashMap<String, Client>();
         List<Client> list = new ArrayList<Client>();
         Client client = null;
         for(int i=0 ; i<clients.length-1;i++ ){
@@ -54,7 +53,6 @@ public class ReportGenerator {
             client = new Client (properties[0],properties[1], BigDecimal.valueOf(new Double(properties[2])),
                     properties[3],instructionDate,settlementDate,
                     new Integer(properties[6]),BigDecimal.valueOf(new Double(properties[7])), amount);
-            //set.put(client.getEntity(), client);
             list.add(client);
         }
 
