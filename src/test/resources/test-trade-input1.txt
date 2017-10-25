@@ -1,0 +1,5 @@
+1Entity,Buy/Sell,AgreedFx,Currency,InstructionDate,SettlementDate,Units,PricePerUnit
+Client_10,S,3.0,SAR,11 Jan 2016,13 Jan 2016,1000,100.25
+Client_11,S,3.0,SED,11 Jan 2016,13 Jan 2016,1001,100.25
+Client_101,B,3.0,SAR,11 Jan 2016,13 Jan 2016,1000,100.25
+Client_111,B,3.0,SED,11 Jan 2016,13 Jan 2016,1001,100.25
