@@ -5,6 +5,7 @@ import com.jpm.trade.dummy.DummyDailyTradingProcess;
 import com.jpm.trade.dummy.DummyResultSet;
 import com.jpm.trade.model.Client;
 
+import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,6 +25,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Rabia on 08/10/2017.
  */
+
 public class DailyTradingProcessTest {
 
     DummyDailyTradingProcess tradingProcess = new DummyDailyTradingProcess();
@@ -51,7 +53,7 @@ public class DailyTradingProcessTest {
         String path= classLoader.getResource(fileName).getPath().replace("/C:/","C:/");
 
 
-        DummyDailyTradingProcess.dailyTradingprocess(path);
+        tradingProcess.dailyTradingprocess(path);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
         //Client_10,S,3.0,SAR,11 Jan 2016,13 Jan 2016,1000,100.25
         //Client_11,S,3.0,SED,11 Jan 2016,13 Jan 2016,1001,100.25

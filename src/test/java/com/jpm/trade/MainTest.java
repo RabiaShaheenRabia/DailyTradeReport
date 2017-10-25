@@ -1,15 +1,15 @@
 package com.jpm.trade;
 
+import junit.framework.TestCase;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
-import static org.junit.Assert.assertEquals;
-
 /**
  * Created by Rabia on 24/10/2017.
  */
-public class MainTest {
+
+public class MainTest{
 
     @Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
@@ -25,7 +25,6 @@ public class MainTest {
         args[0] = path;
         exit.expectSystemExitWithStatus(0);
         Main.main(args);
-       // assertEquals(true,Main.exited);
-
     }
+
 }
