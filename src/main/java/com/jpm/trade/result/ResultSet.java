@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 public class ResultSet {
 
     static Map<LocalDate, BigDecimal> outgoingAggregateAmount ;
-    static    Map<LocalDate, BigDecimal> incomingAggregateAmount ;
+    static Map<LocalDate, BigDecimal> incomingAggregateAmount ;
 
     // RankingOn both resultB and resultS daily basis
     static Map<LocalDate,Supplier<Stream<Client>>> rankingForOutgoing ;
@@ -24,17 +24,6 @@ public class ResultSet {
 
 
     String fileFormat ="";
-
-
-    public  String getFileFormat() {
-        return fileFormat;
-    }
-
-    public  void setFileFormat(String fileFormat) {
-        this.fileFormat = fileFormat;
-    }
-
-
 
     public static Map<LocalDate, BigDecimal>  getOutgoingAggregateAmount() {
         return outgoingAggregateAmount;
@@ -102,6 +91,11 @@ public class ResultSet {
         this.rankingForIncoming = rankingForIncoming;
     }
 
+    public String getFileFormat() {
+        return fileFormat;
+    }
 
-
+    public  void setFileFormat(String fileFormat) {
+        this.fileFormat = fileFormat;
+    }
 }
