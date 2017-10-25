@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
 }
 jar {
-    baseName = "DailyTradingProcess"
+    baseName = "DailyTradeProcess"
 }
 
 dependencies {
@@ -21,5 +21,14 @@ dependencies {
     testCompile 'com.github.stefanbirkner:system-rules:1.16.0'
 }
 run {
-    args += ['java -cp DailyTradingProcess.jar com.jpm.trade.Main C:\\projectsIntellij\\trade-input.txt']
+    args += ['java -cp DailyTradeProcess.jar com.jpm.trade.Main C:\\projectsIntellij\\trade-input.txt']
 }
+    test {
+        testLogging {
+            // Show that tests are run in the command-line output
+            events 'started', 'passed'
+        }
+    }
+    //'java -cp DailyTradeProcess.jar com.jpm.trade.TestSuite'
+
+
