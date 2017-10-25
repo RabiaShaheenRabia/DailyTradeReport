@@ -1,6 +1,7 @@
 package com.jpm.trade;
 
 import com.jpm.trade.process.DailyTradingProcess;
+import com.jpm.trade.process.IDailyTradingProcess;
 import com.jpm.trade.result.ResultSet;
 
 import static java.lang.System.exit;
@@ -13,7 +14,7 @@ public class Main {
 
 
     private static String fileName="C:\\projectsIntellij\\trade-input.txt";
-    private static DailyTradingProcess tradingProcess = new DailyTradingProcess();
+    private static IDailyTradingProcess tradingProcess = new DailyTradingProcess();
     private static ResultSet r;
 
     public static void main(String[] args) {
