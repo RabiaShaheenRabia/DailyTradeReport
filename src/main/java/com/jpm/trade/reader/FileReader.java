@@ -11,7 +11,7 @@ import java.util.EnumSet;
 /**
  * Created by Rabia on 08/10/2017.
  */
-public class FileReader {
+public class FileReader implements  IFileReader{
 
     public MappedByteBuffer processTradingFile(String fileName) {
         Path pathToRead = null;
