@@ -10,15 +10,15 @@ import java.time.format.DateTimeFormatter;
 
 public class Client {
 
-    String entity;
-    String trade; //B - Buy / S - Sell
-    BigDecimal agreedFx;
-    String currency;
-    LocalDate instructionDate;
-    LocalDate settlementDate;
-    int units;
-    BigDecimal pricePerUnit;
-    BigDecimal amount;
+    private String entity = "";
+    private String trade = ""; //B - Buy / S - Sell
+    private BigDecimal agreedFx =BigDecimal.valueOf(0);
+    private String currency = "";
+    private LocalDate instructionDate ;
+    private LocalDate settlementDate;
+    private int units =0;
+    private BigDecimal pricePerUnit=BigDecimal.valueOf(0);
+    private BigDecimal amount =BigDecimal.valueOf(0);
 
     public Client() {
     }
