@@ -50,9 +50,9 @@ public class ResultSet {
             while (groupingByDateAndTrade.hasNext()) {
                 LocalDate date = groupingByDateAndTrade.next();
                 Supplier<Stream<Client>> clientStream = rankingForOutgoing.get(date);
-                final AtomicInteger rank = new AtomicInteger(0);
+                //final AtomicInteger rank = new AtomicInteger(0);
 
-                clientStream.get().forEach(c -> { c.setRank(rank.incrementAndGet());
+                clientStream.get().forEach(c -> {// c.setRank(rank.incrementAndGet());
                     System.out.println(c.getSettlementDate() + "  " + c.getEntity() + "  "+ c.getCurrency()+"    "
                             + c.getAmount() + "     " + c.getRank());
                 });
@@ -75,10 +75,10 @@ public class ResultSet {
             while (groupingByDateAndTrade.hasNext()) {
                 LocalDate date = groupingByDateAndTrade.next();
                 Supplier<Stream<Client>> clientStream = rankingForIncoming.get(date);
-                final AtomicInteger rank = new AtomicInteger(0);
+               // final AtomicInteger rank = new AtomicInteger(0);
                 clientStream .get(). forEach(c -> {
                     System.out.println(c.getSettlementDate() + "  " + c.getEntity() + "  "+ c.getCurrency()+"     "
-                            + c.getAmount() + "     " + rank.incrementAndGet());
+                            + c.getAmount() + "     " + c.getRank());
                 });
 
 

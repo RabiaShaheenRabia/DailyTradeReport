@@ -90,10 +90,12 @@ public class DailyTradingProcessTest {
 
        System.out.println("|------ Test Cases Ranking For Incoming ---------------------------------------|");
 
-       assertEquals(clients.get(0).getAmount(),
+        assertEquals(clients.get(0).getRank(),
+                DummyResultSet.getRankingForIncoming().get(settlementDate).get().findFirst().get().getRank());
+
+
+        assertEquals(clients.get(0).getAmount(),
                 DummyResultSet.getRankingForIncoming().get(settlementDate).get().findFirst().get().getAmount());
-
-
     }
 
 

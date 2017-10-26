@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -94,7 +95,12 @@ public class ReportGenerator implements IReportGenerator{
             Supplier<Stream<Client>> clientStream = () ->clientList
                     .stream().sorted((c1, c2) -> c2.getAmount().compareTo(c1.getAmount()));
 
-             clientMap.put(date,clientStream);
+            final AtomicInteger rank = new AtomicInteger(0);
+
+            clientStream.get().forEach(c -> { c.setRank(rank.incrementAndGet());
+            });
+
+            clientMap.put(date,clientStream);
 
         }
         return clientMap;
