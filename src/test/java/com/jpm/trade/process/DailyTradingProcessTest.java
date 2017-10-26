@@ -13,10 +13,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -90,12 +87,19 @@ public class DailyTradingProcessTest {
 
        System.out.println("|------ Test Cases Ranking For Incoming ---------------------------------------|");
 
-        assertEquals(clients.get(0).getRank(),
-                DummyResultSet.getRankingForIncoming().get(settlementDate).get().findFirst().get().getRank());
+       int i=0;
+       Iterator iterator =DummyResultSet.getRankingForIncoming().get(settlementDate).get().iterator();
+       while (iterator.hasNext()) {
+           Client client =(Client) iterator.next();
 
+           assertEquals(clients.get(i).getRank(),
+                  client.getRank());
 
-        assertEquals(clients.get(0).getAmount(),
-                DummyResultSet.getRankingForIncoming().get(settlementDate).get().findFirst().get().getAmount());
+           assertEquals(clients.get(i).getAmount(),
+                   client.getAmount());
+
+           i++;
+       }
     }
 
 
