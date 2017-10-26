@@ -97,8 +97,7 @@ public class ReportGenerator implements IReportGenerator{
 
             final AtomicInteger rank = new AtomicInteger(0);
 
-            clientStream.get().forEach(c -> { c.setRank(rank.incrementAndGet());
-            });
+            clientStream.get().forEach(c -> { c.setRank(rank.incrementAndGet());});
 
             clientMap.put(date,clientStream);
 
