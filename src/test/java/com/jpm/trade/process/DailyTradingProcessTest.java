@@ -44,7 +44,7 @@ public class DailyTradingProcessTest {
     Map<LocalDate, Supplier<Stream<Client>>> incoming = new HashMap<>();
     Map<LocalDate, Supplier<Stream<Client>>> outgoing = new HashMap<>();
     Supplier<Stream<Client>> clientStream;
-
+    List<Client> clients;
     @Before
     public void setUp() throws Exception {
 
@@ -68,8 +68,11 @@ public class DailyTradingProcessTest {
                 settlementDate,
                 1000, BigDecimal.valueOf(100.25d),BigDecimal.valueOf(3.0*1000*100.25)) ;
 
-        List<Client> clients = new ArrayList<>();
+
+        clients = new ArrayList<>();
+        client1B.setRank(1);
         clients.add(client1B);
+        client2B.setRank(2);
         clients.add(client2B);
         clientStream = () -> clients.stream() ;
         incoming.put(settlementDate, clientStream);
@@ -87,12 +90,10 @@ public class DailyTradingProcessTest {
 
        System.out.println("|------ Test Cases Ranking For Incoming ---------------------------------------|");
 
-        //assertEquals(incoming.size(),DummyResultSet.getRankingForIncoming().values().size());
-        incoming.get(settlementDate).get().forEach(c->System.out.println(c.getAmount()));
-        DummyResultSet.getRankingForIncoming().get(settlementDate).get().forEach(c->System.out.println(c.getAmount()));
+       assertEquals(clients.get(0).getAmount(),
+                DummyResultSet.getRankingForIncoming().get(settlementDate).get().findFirst().get().getAmount());
 
-      // assertEquals(clientStream.forEach(c->c.toString()),(actualClient.forEach(c->c.toString())));
-       //assertEquals(601800.75,DummyResultSet.getRankingForOutgoing());
+
     }
 
 
